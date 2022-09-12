@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1 JS</title>
+</head>
+<body>
+    <H1>
+        Data Pegawai 
+    </H1>
+    <Table border="1">
+        <thead style="background-color: antiquewhite;">
+            <td>Data</td>
+            <td>Keterangan</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nama</td>
+                <td><P id="namaPegawai"></P></td>
+            </tr>
+            <tr>
+                <td>Jabatan</td>
+                <td><P id="Jabatan"></P></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td><P id="Status"></P></td>
+            </tr>
+            <tr>
+                <td>Tunjangan BPJS</td>
+                <td><P id="bpjs"></P></td>
+            </tr>
+            <tr>
+                <td>Tunjangan Jabatan</td>
+                <td><P id="tunjanganJabatan"></P></td>
+            </tr>
+            <tr>
+                <td>Tunjangan Keluarga</td>
+                <td><P id="tunjanganKeluarga"></P></td>
+            </tr>
+        </tbody>
+        <tfoot style="background-color: antiquewhite;">
+            <tr>
+                <td>Total</td>
+                <td><P id="total"></P></td>
+            </tr>
+        </tfoot>
+    </Table>
+</body>
+</html>
+
+<script type="text/javascript">
+    let gajiPokok = 15000000
+    let bpjs = 0.1 * gajiPokok
+    let tunjanganJabatan = 0.15 * gajiPokok
+    let tunjanganKeluarga = 0.2 * gajiPokok
+    let Total = gajiPokok+bpjs+tunjanganJabatan+tunjanganKeluarga 
+
+    document.getElementById("namaPegawai").innerHTML = "Ridwan"
+    document.getElementById("Jabatan").innerHTML = "Manager"
+    document.getElementById("Status").innerHTML = "Menikah"
+    document.getElementById("bpjs").innerHTML = bpjs
+    document.getElementById("tunjanganJabatan").innerHTML = tunjanganJabatan
+    document.getElementById("tunjanganKeluarga").innerHTML = tunjanganKeluarga
+    document.getElementById("total").innerHTML = Total
+    
+        
+</script>
