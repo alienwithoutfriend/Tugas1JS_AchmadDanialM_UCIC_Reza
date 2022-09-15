@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Tugas 2 Javascript</title>
+</head>
+
+<body>
+	<h1 style="text-align: center;">DAFTAR PEGAWAI</h1>
+		<table border cellpadding="10" cellspacing="0" align="center" width="100%">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Nama</th>
+					<th>Jabatan</th>
+					<th>Agama</th>
+					<th>Gaji Pokok</th>
+					<th>Tunjangan Jabatan</th>
+					<th>Tunjangan Kesehatan</th>
+					<th>Gaji Kotor</th>
+					<th>Zakat Profesi</th>
+					<th>Take Home Pay</th>
+				</tr>
+			</thead>
+			<tbody align="center">
+				<script>
+					let jabatan, agama, gapok, tunjab, tunkes, gator, zakat, takeHome, warna;
+
+					for (let i = 1; i <= 100; i++) {
+						if (i <= 25) {
+							jabatan = "Manager"
+						} else if (i <= 50) {
+							jabatan = "Asisten Manager"
+						} else if (i <= 75) {
+							jabatan = "Supervisor"
+						} else {
+							jabatan = "Staff"
+						}
+
+						switch (jabatan) {
+							case "Manager":
+								gapok = 15000000;
+								break;
+							case "Asisten Manager":
+								gapok = 10000000;
+								break;
+							case "Supervisor":
+								gapok = 7000000;
+								break;
+							case "Staff":
+								gapok = 5000000;
+								break;
+							default:
+								gapok = 0;
+								break;
+						}
+
+						tunjab = (gapok * 20) / 100;
+						tunkes = (gapok * 10) / 100;
+						gator = gapok + tunjab + tunkes;
+
+						agama = (i % 2 < 1) ? "Non Muslim" : "Muslim";
+						warna = (agama == "Non Muslim") ? "blue" : "yellow";
+						zakat = (agama == "Muslim" && gator >= 7000000) ? (gator * 2.5) / 100 : 0;
+						takeHome = gator - zakat;
+
+						document.write(`
+							<tr bgcolor="${warna}">
+									<td>${i}</td>
+									<td>Pegawai${i}</td>
+									<td>${jabatan}</td>
+									<td>${agama}</td>
+									<td align="right">${gapok}</td>
+									<td align="right">${tunjab}</td>
+									<td align="right">${tunkes}</td>
+									<td align="right">${gator}</td>
+									<td align="right">${zakat}</td>
+									<td align="right">${takeHome}</td>
+							</tr>
+						`);
+					}
+				</script>
+			</tbody>
+		</table>
+</body>
+
+</html>
